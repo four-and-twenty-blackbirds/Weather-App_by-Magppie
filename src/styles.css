@@ -1,3 +1,61 @@
-h1 {
-	color: lavender;
+.current-conditions-wrapper {
+	margin: 0px;
+	padding-top: 1px;
+}
+
+.container {
+	background-color: #f7dbf0;
+	max-width: 480px;
+	margin: 12px auto;
+	padding: 21px 30px;
+	border-radius: 12px;
+}
+
+h5 {
+	margin: 0;
+}
+
+.date-time {
+	margin: 0;
+	line-height: 12px;
+}
+
+.main-temps {
+	margin: 150px auto;
+	text-align: center;
+}
+
+.main-temp-number {
+	font-size: 90px;
+	line-height: 99px;
+}
+
+.main-unit {
+	font-size: 24px;
+}
+
+.hi-lo {
+	display: block;
+	line-height: 9px;
+}
+
+.row .current-conditions {
+	color: white;
+}
+
+.current-conditions img {
+	width: 20%;
+}
+
+.current-conditions p {
+	margin: 0px;
+	font-size: 12px;
+	line-height: 30px;
+}
+
+.current-conditions li {
+	list-style: none;
+	font-size: 12px;
+	text-align: left;
+	line-height: 21px;
 }

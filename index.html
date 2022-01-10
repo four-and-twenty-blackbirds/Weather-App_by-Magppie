@@ -11,13 +11,47 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="src/styles.css" class="css" />
-		<title>Weather</title>
+		<title>🌤 Weather App</title>
 	</head>
 	<body>
-		<div class="container">
-			<h1>Weather App</h1>
-			<a href="" type="button" class="btn btn-primary">Click Me</a>
-			<script src="src/app.js"></script>
+		<div class="current-conditions-wrapper">
+			<div class="container">
+				<h5>Tucson</h5>
+				<p class="date-time"><small>1:01pm, Mon Jan 10</small></p>
+				<p class="main-temps">
+					<strong>
+						<span class="main-temp-number">67</span>
+						<span class="main-unit">°F</span>
+					</strong>
+					<span class="hi-lo">
+						<small
+							><strong>HI 68°F</strong> &nbsp;&nbsp; | &nbsp;&nbsp;LO
+							61°F</small
+						>
+					</span>
+				</p>
+				<div class="row current-conditions">
+					<div class="col-6">
+						<img src="images/Weather-App_Sun-Part_v3.png" />
+						<p>Partly Cloudy</p>
+					</div>
+					<div class="col-2">
+						<ul>
+							<li>20</li>
+							<li>100%</li>
+							<li>20</li>
+						</ul>
+					</div>
+					<div class="col-4">
+						<ul>
+							<li>Precipitation</li>
+							<li>Humidity</li>
+							<li>Wind Speed</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
+		<script src="src/app.js"></script>
 	</body>
 </html>
