@@ -26,7 +26,23 @@
 	<body>
 		<div class="current-conditions-wrapper">
 			<div class="container">
-				<h5>Tucson</h5>
+				<form id="search-form" class="mb-3">
+					<div class="row">
+						<div class="col-6">
+							<input
+								type="search"
+								placeholder="Enter a city"
+								class="form-control"
+								id="search-field"
+								autocomplete="off"
+							/>
+						</div>
+						<div class="col-3">
+							<input type="submit" value="search" class="btn btn-primary" />
+						</div>
+					</div>
+				</form>
+				<h5 id="city-name">--</h5>
 				<p class="date-time">
 					<small><span id="date">--:--, -- -- --</span></small>
 				</p>

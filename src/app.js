@@ -37,8 +37,7 @@ function formatDate(timestamp) {
 }
 
 function showCityWeather(response) {
-	console.log(response.data);
-
+	let cityName = document.querySelector("#city-name");
 	let mainTemp = document.querySelector("#main-temp");
 	let hiTemp = document.querySelector("#hi-temp");
 	let loTemp = document.querySelector("#lo-temp");
@@ -47,6 +46,7 @@ function showCityWeather(response) {
 	let humidity = document.querySelector("#humidity");
 	let windSpeed = document.querySelector("#wind-speed");
 
+	cityName.innerHTML = response.data.name;
 	mainTemp.innerHTML = Math.round(response.data.main.temp);
 	hiTemp.innerHTML = Math.round(response.data.main.temp_max);
 	loTemp.innerHTML = Math.round(response.data.main.temp_min);
@@ -59,12 +59,23 @@ function showCityWeather(response) {
 	date.innerHTML = formatDate(response.data.dt * 1000);
 }
 
-let city = "Tucson";
-let unit = "imperial";
-let apiKey = "aee115d67b5ede7133bf4a0747025512";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+function search(city) {
+	let unit = "imperial";
+	let apiKey = "aee115d67b5ede7133bf4a0747025512";
+	let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
-axios.get(apiUrl).then(showCityWeather);
+	axios.get(apiUrl).then(showCityWeather);
+}
 
-let timeNow = new Date();
-console.log(timeNow);
+function changeCity(event) {
+	event.preventDefault();
+	let cityInput = document.querySelector("#search-field");
+	let cityName = document.querySelector("#city-name");
+	cityName.innerHTML = cityInput.value;
+	search(cityInput.value);
+}
+
+search("Tucson");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", changeCity);
