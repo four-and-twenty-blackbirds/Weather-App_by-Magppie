@@ -30,31 +30,36 @@
 				<p class="date-time"><small>1:01pm, Mon Jan 10</small></p>
 				<p class="main-temps">
 					<strong>
-						<span class="main-temp-number">67</span>
+						<span class="main-temp-number"><span id="main-temp">--</span></span>
 						<span class="main-unit">°F</span>
 					</strong>
 					<span class="hi-lo">
 						<small
-							><strong>HI 68°F</strong> &nbsp;&nbsp; | &nbsp;&nbsp;LO
-							61°F</small
+							><strong>HI <span id="hi-temp">--</span>°F</strong> &nbsp;&nbsp; |
+							&nbsp;&nbsp;LO <span id="lo-temp">--</span>°F</small
 						>
 					</span>
 				</p>
 				<div class="row current-conditions">
-					<div class="col-6">
+					<div class="col-7">
 						<img src="images/Weather-App_Sun-Part_v3.png" />
-						<p>Partly Cloudy</p>
+						<p id="conditions">Partly Cloudy</p>
 					</div>
+
 					<div class="col-2">
 						<ul>
-							<li>20</li>
-							<li>100%</li>
-							<li>20</li>
+							<li><span id="feels-like">--</span>°F</li>
+							<li><span id="humidity">--</span></li>
+							<li>
+								<span id="wind-speed">--</span>
+								mph
+							</li>
 						</ul>
 					</div>
-					<div class="col-4">
+
+					<div class="col-3">
 						<ul>
-							<li>Precipitation</li>
+							<li>Feels Like</li>
 							<li>Humidity</li>
 							<li>Wind Speed</li>
 						</ul>

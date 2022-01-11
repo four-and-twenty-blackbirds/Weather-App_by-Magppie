@@ -63,6 +63,11 @@ h5 {
 	line-height: 30px;
 }
 
+.current-conditions ul {
+	padding: 0px;
+	margin: 0px;
+}
+
 .current-conditions li {
 	list-style: none;
 	font-size: 15px;
