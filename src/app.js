@@ -41,6 +41,9 @@ function showCityWeather(response) {
 	let mainTemp = document.querySelector("#main-temp");
 	let hiTemp = document.querySelector("#hi-temp");
 	let loTemp = document.querySelector("#lo-temp");
+	let icon = response.data.weather[0].icon;
+	let iconDescript = response.data.weather[0].description;
+	let currentCondIcon = document.querySelector("#current-conditions-icon");
 	let conditions = document.querySelector("#conditions");
 	let feelsLike = document.querySelector("#feels-like");
 	let humidity = document.querySelector("#humidity");
@@ -50,6 +53,11 @@ function showCityWeather(response) {
 	mainTemp.innerHTML = Math.round(response.data.main.temp);
 	hiTemp.innerHTML = Math.round(response.data.main.temp_max);
 	loTemp.innerHTML = Math.round(response.data.main.temp_min);
+	currentCondIcon.setAttribute(
+		"src",
+		`http://openweathermap.org/img/wn/${icon}@2x.png`
+	);
+	currentCondIcon.setAttribute("alt", `The icon shows ${iconDescript}`);
 	conditions.innerHTML = response.data.weather[0].main;
 	feelsLike.innerHTML = Math.round(response.data.main.feels_like);
 	humidity.innerHTML = response.data.main.humidity;
