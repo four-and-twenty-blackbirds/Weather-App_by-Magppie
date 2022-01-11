@@ -1,3 +1,7 @@
+body {
+	font-family: "Outfit", sans-serif;
+}
+
 .current-conditions-wrapper {
 	margin: 0px;
 	padding-top: 1px;
@@ -16,8 +20,9 @@ h5 {
 }
 
 .date-time {
-	margin: 0;
-	line-height: 12px;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 18px;
 }
 
 .main-temps {
@@ -32,11 +37,15 @@ h5 {
 
 .main-unit {
 	font-size: 24px;
+	font-weight: 400;
 }
 
 .hi-lo {
 	display: block;
-	line-height: 9px;
+	line-height: 21px;
+	font-size: 15px;
+	font-style: italic;
+	font-weight: 400;
 }
 
 .row .current-conditions {
@@ -49,13 +58,15 @@ h5 {
 
 .current-conditions p {
 	margin: 0px;
-	font-size: 12px;
+	font-size: 15px;
+	font-weight: 300;
 	line-height: 30px;
 }
 
 .current-conditions li {
 	list-style: none;
-	font-size: 12px;
+	font-size: 15px;
+	font-weight: 300;
 	text-align: left;
 	line-height: 21px;
 }
