@@ -7,7 +7,7 @@ body {
 	padding-top: 1px;
 }
 
-.container {
+.container .pink {
 	background-color: #f7dbf0;
 	max-width: 480px;
 	margin: 12px auto;
@@ -40,6 +40,7 @@ body {
 }
 
 .units {
+	padding: 0px;
 	font-weight: 300;
 	font-size: 18px;
 }
@@ -113,4 +114,20 @@ h5 {
 	font-weight: 300;
 	text-align: left;
 	line-height: 21px;
+}
+
+.container .white {
+	max-width: 480px;
+	margin: 12px auto;
+	padding: 0px 30px;
+	border-radius: 12px;
+}
+
+.credit-text {
+	text-decoration: none;
+	color: rgba(57, 162, 219, 1);
+}
+
+.credit-text:hover {
+	color: #2f3a8f;
 }

@@ -26,72 +26,90 @@
 	<body>
 		<div class="current-conditions-wrapper">
 			<div class="container">
-				<form id="search-form" class="mb-3">
-					<div class="row">
+				<div class="pink">
+					<form id="search-form" class="mb-3">
+						<div class="row">
+							<div class="col-7">
+								<input
+									type="search"
+									placeholder="Enter a city"
+									class="form-control"
+									id="search-field"
+									autocomplete="off"
+								/>
+							</div>
+							<div class="col-3">
+								<input type="submit" value="search" class="btn btn-primary" />
+							</div>
+							<div class="col-2 units">
+								<a href="#" id="c-unit">°C</a> | <a href="#" id="f-unit">°F</a>
+							</div>
+						</div>
+					</form>
+					<h5 id="city-name">--</h5>
+					<p class="date-time">
+						<small><span id="date">--:--, -- -- --</span></small>
+					</p>
+					<p class="main-temps">
+						<strong>
+							<span class="main-temp-number"
+								><span id="main-temp">--</span></span
+							>
+							<span class="main-unit">°F</span>
+						</strong>
+						<span class="hi-lo">
+							<small
+								><strong>HI <span id="hi-temp">--</span>°F</strong> &nbsp;&nbsp;
+								| &nbsp;&nbsp;LO <span id="lo-temp">--</span>°F</small
+							>
+						</span>
+					</p>
+					<div class="row current-conditions">
 						<div class="col-7">
-							<input
-								type="search"
-								placeholder="Enter a city"
-								class="form-control"
-								id="search-field"
-								autocomplete="off"
+							<img
+								src="images/Weather-App_Sun-Part_v3.png"
+								alt="weather icon for current conditions"
+								id="current-conditions-icon"
 							/>
+							<p id="conditions">--</p>
 						</div>
+
+						<div class="col-2">
+							<ul>
+								<li><span id="feels-like">--</span>°F</li>
+								<li><span id="humidity">--</span></li>
+								<li>
+									<span id="wind-speed">--</span>
+									mph
+								</li>
+							</ul>
+						</div>
+
 						<div class="col-3">
-							<input type="submit" value="search" class="btn btn-primary" />
+							<ul>
+								<li>Feels Like</li>
+								<li>Humidity</li>
+								<li>Wind Speed</li>
+							</ul>
 						</div>
-						<div class="col-2 units">
-							<a href="#" id="c-unit">°C</a> | <a href="#" id="f-unit">°F</a>
-						</div>
-					</div>
-				</form>
-				<h5 id="city-name">--</h5>
-				<p class="date-time">
-					<small><span id="date">--:--, -- -- --</span></small>
-				</p>
-				<p class="main-temps">
-					<strong>
-						<span class="main-temp-number"><span id="main-temp">--</span></span>
-						<span class="main-unit">°F</span>
-					</strong>
-					<span class="hi-lo">
-						<small
-							><strong>HI <span id="hi-temp">--</span>°F</strong> &nbsp;&nbsp; |
-							&nbsp;&nbsp;LO <span id="lo-temp">--</span>°F</small
-						>
-					</span>
-				</p>
-				<div class="row current-conditions">
-					<div class="col-7">
-						<img
-							src="images/Weather-App_Sun-Part_v3.png"
-							alt="weather icon for current conditions"
-							id="current-conditions-icon"
-						/>
-						<p id="conditions">--</p>
-					</div>
-
-					<div class="col-2">
-						<ul>
-							<li><span id="feels-like">--</span>°F</li>
-							<li><span id="humidity">--</span></li>
-							<li>
-								<span id="wind-speed">--</span>
-								mph
-							</li>
-						</ul>
-					</div>
-
-					<div class="col-3">
-						<ul>
-							<li>Feels Like</li>
-							<li>Humidity</li>
-							<li>Wind Speed</li>
-						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="container">
+			<div class="white">
+				<div>
+					<a
+						href="https://github.com/MegMcC15/Weather-App_by-Magppie"
+						target="blank"
+						class="credit-text"
+						>Open Source</a
+					>
+					by Magpie
+				</div>
+			</div>
+		</div>
+
 		<script src="src/app.js"></script>
 	</body>
 </html>
