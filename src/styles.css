@@ -39,6 +39,20 @@ body {
 	background: #2f3a8f;
 }
 
+.units {
+	font-weight: 300;
+	font-size: 18px;
+}
+
+.units a {
+	text-decoration: none;
+	color: black;
+}
+
+.units a:hover {
+	text-decoration: underline;
+}
+
 h5 {
 	margin: 0;
 }
