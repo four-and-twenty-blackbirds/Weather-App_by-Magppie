@@ -40,6 +40,42 @@ function formatDate(timestamp) {
 	return `${hours}:${minutes}, ${day} ${month} ${date}`;
 }
 
+function displayForecast() {
+	let forecastElement = document.querySelector("#forecasts");
+
+	let forecastHTML = `<div class="row forecast-temperatures">`;
+	let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+	days.forEach(function (day) {
+		forecastHTML =
+			forecastHTML +
+			`<div class="col-2 forecast-col">
+				<div class="forecast-date">${day}</div>
+				<img src="http://openweathermap.org/img/wn/01n@2x.png" alt="" width="42"/>
+				<div class="forecast-temps">
+					<span class="forecast-hi"> 30°</span> 18°
+				</div>
+			</div>
+		`;
+	});
+	forecastHTML = forecastHTML + `</div>`;
+	forecastElement.innerHTML = forecastHTML;
+
+	//<div class="row forecast-temperatures">
+	//	<div class="col-2 forecast-col">
+	//		<div class="forecast-date">${day}
+	//		</div>
+	//		<img
+	//			src="http://openweathermap.org/img/wn/01n@2x.png"
+	//			alt=""
+	//			width="42"
+	//		/>
+	//		<div class="forecast-temps">
+	//			<span class="forecast-hi"> 30°</span> 18°
+	//		</div>
+	//	</div>
+	//</div>
+}
+
 function showCityWeather(response) {
 	let cityName = document.querySelector("#city-name");
 	let mainTemp = document.querySelector("#main-temp");
@@ -170,3 +206,5 @@ let unitF = document.querySelector("#f-unit");
 unitF.addEventListener("click", revertF);
 
 search("Tucson");
+
+displayForecast();
