@@ -61,6 +61,13 @@ function displayForecast() {
 	forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+	let apiKey = "aee115d67b5ede7133bf4a0747025512";
+	let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+
+	axios.get(apiUrl).then(displayForecast);
+}
+
 function showCityWeather(response) {
 	let cityName = document.querySelector("#city-name");
 	let mainTemp = document.querySelector("#main-temp");
@@ -71,18 +78,13 @@ function showCityWeather(response) {
 	let iconDescript = response.data.weather[0].description;
 	let currentCondIcon = document.querySelector("#current-conditions-icon");
 	let conditions = document.querySelector("#conditions");
-
 	let humidity = document.querySelector("#humidity");
 	let windSpeed = document.querySelector("#wind-speed");
-
 	let mainUnit = document.querySelector("#main-unit");
-	mainUnit.innerHTML = "°F";
 	let hiUnit = document.querySelector("#hi-unit");
-	hiUnit.innerHTML = "°F";
 	let loUnit = document.querySelector("#lo-unit");
-	loUnit.innerHTML = "°F";
 	let feelsUnit = document.querySelector("#feels-unit");
-	feelsUnit.innerHTML = "°F";
+	let date = document.querySelector("#date");
 
 	mainFarTemp = response.data.main.temp;
 	hiFarTemp = response.data.main.temp_max;
@@ -94,18 +96,21 @@ function showCityWeather(response) {
 	hiTemp.innerHTML = Math.round(hiFarTemp);
 	loTemp.innerHTML = Math.round(loFarTemp);
 	feelsLike.innerHTML = Math.round(feelsFarTemp);
-
 	currentCondIcon.setAttribute(
 		"src",
 		`http://openweathermap.org/img/wn/${icon}@2x.png`
 	);
 	currentCondIcon.setAttribute("alt", `The icon shows ${iconDescript}`);
 	conditions.innerHTML = response.data.weather[0].main;
-	humidity.innerHTML = response.data.main.humidity;
 	windSpeed.innerHTML = Math.round(response.data.wind.speed);
-
-	let date = document.querySelector("#date");
+	humidity.innerHTML = response.data.main.humidity;
+	mainUnit.innerHTML = "°F";
+	hiUnit.innerHTML = "°F";
+	loUnit.innerHTML = "°F";
+	feelsUnit.innerHTML = "°F";
 	date.innerHTML = formatDate(response.data.dt * 1000);
+
+	getForecast(response.data.coord);
 }
 
 function search(city) {
