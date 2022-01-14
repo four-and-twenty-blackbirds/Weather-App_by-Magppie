@@ -59,21 +59,6 @@ function displayForecast() {
 	});
 	forecastHTML = forecastHTML + `</div>`;
 	forecastElement.innerHTML = forecastHTML;
-
-	//<div class="row forecast-temperatures">
-	//	<div class="col-2 forecast-col">
-	//		<div class="forecast-date">${day}
-	//		</div>
-	//		<img
-	//			src="http://openweathermap.org/img/wn/01n@2x.png"
-	//			alt=""
-	//			width="42"
-	//		/>
-	//		<div class="forecast-temps">
-	//			<span class="forecast-hi"> 30°</span> 18°
-	//		</div>
-	//	</div>
-	//</div>
 }
 
 function showCityWeather(response) {
