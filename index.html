@@ -24,83 +24,87 @@
 		<title>🌤 Weather App</title>
 	</head>
 	<body>
-		<div class="container">
-			<div class="current-weather">
-				<form id="search-form" class="mb-3">
-					<div class="row">
-						<div class="col-7">
-							<input
-								type="search"
-								placeholder="Enter a city"
-								class="form-control"
-								id="search-field"
-								autocomplete="off"
-							/>
+		<div class="weather-app-wrapper">
+			<div class="container">
+				<div class="current-weather">
+					<form id="search-form" class="mb-3">
+						<div class="row">
+							<div class="col-7">
+								<input
+									type="search"
+									placeholder="Enter a city"
+									class="form-control"
+									id="search-field"
+									autocomplete="off"
+								/>
+							</div>
+							<div class="col-3">
+								<input type="submit" value="search" class="btn btn-primary" />
+							</div>
+							<div class="col-2 units">
+								<a href="#" id="c-unit">°C</a> | <a href="#" id="f-unit">°F</a>
+							</div>
 						</div>
-						<div class="col-3">
-							<input type="submit" value="search" class="btn btn-primary" />
-						</div>
-						<div class="col-2 units">
-							<a href="#" id="c-unit">°C</a> | <a href="#" id="f-unit">°F</a>
-						</div>
-					</div>
-				</form>
-				<h5 id="city-name">--</h5>
-				<p class="date-time">
-					<small><span id="date">--:--, -- -- --</span></small>
-				</p>
-				<p class="main-temps">
-					<strong>
-						<span class="main-temp-number"><span id="main-temp">--</span></span>
-						<span class="main-unit" id="main-unit">°F</span>
-					</strong>
-					<span class="hi-lo">
-						<small
-							><strong
-								>HI <span id="hi-temp">--</span
-								><span id="hi-unit">°F</span></strong
+					</form>
+					<h5 id="city-name">--</h5>
+					<p class="date-time">
+						<small><span id="date">--:--, -- -- --</span></small>
+					</p>
+					<p class="main-temps">
+						<strong>
+							<span class="main-temp-number"
+								><span id="main-temp">--</span></span
 							>
-							&nbsp;&nbsp; | &nbsp;&nbsp;LO <span id="lo-temp">--</span
-							><span id="lo-unit">°F</span></small
-						>
-					</span>
-				</p>
-				<div class="row current-conditions">
-					<div class="col-7">
-						<img
-							src=""
-							alt="weather icon for current conditions"
-							id="current-conditions-icon"
-						/>
-						<p id="conditions">--</p>
-					</div>
+							<span class="main-unit" id="main-unit">°F</span>
+						</strong>
+						<span class="hi-lo">
+							<small
+								><strong
+									>HI <span id="hi-temp">--</span
+									><span id="hi-unit">°F</span></strong
+								>
+								&nbsp;&nbsp; | &nbsp;&nbsp;LO <span id="lo-temp">--</span
+								><span id="lo-unit">°F</span></small
+							>
+						</span>
+					</p>
+					<div class="row current-conditions">
+						<div class="col-7">
+							<img
+								src=""
+								alt="weather icon for current conditions"
+								id="current-conditions-icon"
+							/>
+							<p id="conditions">--</p>
+						</div>
 
-					<div class="col-2">
-						<ul>
-							<li>
-								<span id="feels-like">--</span><span id="feels-unit">°F</span>
-							</li>
-							<li><span id="humidity">--</span></li>
-							<li>
-								<span id="wind-speed">--</span>
-								mph
-							</li>
-						</ul>
-					</div>
+						<div class="col-2">
+							<ul>
+								<li>
+									<span id="feels-like">--</span><span id="feels-unit">°F</span>
+								</li>
+								<li><span id="humidity">--</span></li>
+								<li>
+									<span id="wind-speed">--</span>
+									mph
+								</li>
+							</ul>
+						</div>
 
-					<div class="col-3">
-						<ul>
-							<li>Feels Like</li>
-							<li>Humidity</li>
-							<li>Wind Speed</li>
-						</ul>
+						<div class="col-3">
+							<ul>
+								<li>Feels Like</li>
+								<li>Humidity</li>
+								<li>Wind Speed</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="container">
-			<div class="forecast-weather" id="forecasts">--</div>
+			<div class="container">
+				<div class="forecast-weather" id="forecasts">--</div>
+			</div>
 		</div>
 
 		<div class="container">
