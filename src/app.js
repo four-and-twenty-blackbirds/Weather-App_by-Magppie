@@ -23,6 +23,10 @@ function formatDate(timestamp) {
 	let month = months[newDate.getMonth()];
 	let date = newDate.getDate();
 
+	if (minutes < 10) {
+		minutes = `0` + minutes;
+	}
+
 	if (hours > 12) {
 		hours = hours -= 12;
 		minutes = minutes + "pm";
