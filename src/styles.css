@@ -78,20 +78,25 @@ h5 {
 
 .main-temp-number {
 	font-size: 84px;
+	font-weight: 800;
 	line-height: 75px;
 }
 
 .main-unit {
 	font-size: 24px;
-	font-weight: 400;
+	font-weight: 700;
 }
 
 .hi-lo {
 	display: block;
-	line-height: 27px;
-	font-size: 15px;
+	text-align: center;
+	font-size: 18px;
 	font-style: italic;
 	font-weight: 400;
+}
+
+.main-temps .hi-temp {
+	display: block;
 }
 
 .current-conditions {
@@ -124,7 +129,7 @@ h5 {
 }
 
 .forecast-weather {
-	background-color: #f9f9f9;
+	background: #b8cbf4;
 	max-width: 480px;
 	margin: 0px auto 12px;
 	padding: 21px 30px;
@@ -152,7 +157,7 @@ h5 {
 }
 
 .forecast-temps {
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: 300;
 	color: #334357;
 }
