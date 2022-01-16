@@ -1,13 +1,5 @@
-html {
-	background: url(https://i.imgur.com/xytDn7W.png) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
 body {
-	background: none;
+	background: #334357;
 	font-family: "Outfit", sans-serif;
 }
 
@@ -89,8 +81,14 @@ h5 {
 }
 
 .main-temps {
-	margin: 90px auto;
+	margin: 75px 90px;
+	padding: 21px 0px;
 	text-align: center;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: solid;
+	border-color: #334357;
+	border-width: 1px;
+	border-radius: 6px;
 }
 
 .main-temp-number {
@@ -106,6 +104,7 @@ h5 {
 
 .hi-lo {
 	display: block;
+	padding-top: 21px;
 	text-align: center;
 	font-size: 18px;
 	font-style: italic;
