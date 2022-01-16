@@ -82,45 +82,54 @@ function getForecast(coordinates) {
 }
 
 function showCityWeather(response) {
+	let toggleFUnit = document.querySelector("#f-unit");
+	toggleFUnit.setAttribute("class", `bold`);
+	let toggleCUnit = document.querySelector("#c-unit");
+	toggleCUnit.setAttribute("class", ``);
+
 	let cityName = document.querySelector("#city-name");
 	let mainTemp = document.querySelector("#main-temp");
 	let hiTemp = document.querySelector("#hi-temp");
 	let loTemp = document.querySelector("#lo-temp");
 	let feelsLike = document.querySelector("#feels-like");
+	let windSpeedValue = document.querySelector("#wind-speed");
 	let icon = response.data.weather[0].icon;
 	let iconDescript = response.data.weather[0].description;
 	let currentCondIcon = document.querySelector("#current-conditions-icon");
 	let conditions = document.querySelector("#conditions");
 	let humidity = document.querySelector("#humidity");
-	let windSpeed = document.querySelector("#wind-speed");
+
 	let mainUnit = document.querySelector("#main-unit");
 	let hiUnit = document.querySelector("#hi-unit");
 	let loUnit = document.querySelector("#lo-unit");
 	let feelsUnit = document.querySelector("#feels-unit");
+	let windSpeedUnit = document.querySelector("#wind-speed-unit");
 	let date = document.querySelector("#date");
 
 	mainFarTemp = response.data.main.temp;
 	hiFarTemp = response.data.main.temp_max;
 	loFarTemp = response.data.main.temp_min;
 	feelsFarTemp = response.data.main.feels_like;
+	windSpeed = response.data.wind.speed;
 
 	cityName.innerHTML = response.data.name;
 	mainTemp.innerHTML = Math.round(mainFarTemp);
 	hiTemp.innerHTML = Math.round(hiFarTemp);
 	loTemp.innerHTML = Math.round(loFarTemp);
 	feelsLike.innerHTML = Math.round(feelsFarTemp);
+	windSpeedValue.innerHTML = Math.round(windSpeed);
 	currentCondIcon.setAttribute(
 		"src",
 		`http://openweathermap.org/img/wn/${icon}@2x.png`
 	);
 	currentCondIcon.setAttribute("alt", `The icon shows ${iconDescript}`);
 	conditions.innerHTML = response.data.weather[0].main;
-	windSpeed.innerHTML = Math.round(response.data.wind.speed);
 	humidity.innerHTML = response.data.main.humidity;
 	mainUnit.innerHTML = "°F";
 	hiUnit.innerHTML = "°F";
 	loUnit.innerHTML = "°F";
 	feelsUnit.innerHTML = "°F";
+	windSpeedUnit.innerHTML = "mph";
 	date.innerHTML = formatDate(response.data.dt * 1000);
 
 	getForecast(response.data.coord);
@@ -148,6 +157,7 @@ function convertC(event) {
 	let hiTempC = Math.round(((hiFarTemp - 32) * 5) / 9);
 	let loTempC = Math.round(((loFarTemp - 32) * 5) / 9);
 	let feelsTempC = Math.round(((feelsFarTemp - 32) * 5) / 9);
+	let windSpeedM = Math.round(windSpeed * 1.609);
 
 	let changeMainTemp = document.querySelector("#main-temp");
 	changeMainTemp.innerHTML = Math.round(mainTempC);
@@ -157,7 +167,13 @@ function convertC(event) {
 	changeLoTemp.innerHTML = Math.round(loTempC);
 	let changeFeelsLike = document.querySelector("#feels-like");
 	changeFeelsLike.innerHTML = Math.round(feelsTempC);
+	let changeWindSpeed = document.querySelector("#wind-speed");
+	changeWindSpeed.innerHTML = windSpeedM;
 
+	let toggleCUnit = document.querySelector("#c-unit");
+	toggleCUnit.setAttribute("class", `bold`);
+	let toggleFUnit = document.querySelector("#f-unit");
+	toggleFUnit.setAttribute("class", ``);
 	let mainUnit = document.querySelector("#main-unit");
 	mainUnit.innerHTML = "°C";
 	let hiUnit = document.querySelector("#hi-unit");
@@ -166,6 +182,8 @@ function convertC(event) {
 	loUnit.innerHTML = "°C";
 	let feelsUnit = document.querySelector("#feels-unit");
 	feelsUnit.innerHTML = "°C";
+	let windSpeedUnit = document.querySelector("#wind-speed-unit");
+	windSpeedUnit.innerHTML = "km/h";
 }
 
 function revertF(event) {
@@ -174,6 +192,7 @@ function revertF(event) {
 	let hiTempF = hiFarTemp;
 	let loTempF = loFarTemp;
 	let feelsTempF = feelsFarTemp;
+	let windSpeedI = windSpeed;
 
 	let changeMainTemp = document.querySelector("#main-temp");
 	changeMainTemp.innerHTML = Math.round(mainTempF);
@@ -183,7 +202,13 @@ function revertF(event) {
 	changeLoTemp.innerHTML = Math.round(loTempF);
 	let changeFeelsLike = document.querySelector("#feels-like");
 	changeFeelsLike.innerHTML = Math.round(feelsTempF);
+	let changewindSpeedI = document.querySelector("#wind-speed");
+	changewindSpeedI.innerHTML = Math.round(windSpeedI);
 
+	let toggleFUnit = document.querySelector("#f-unit");
+	toggleFUnit.setAttribute("class", `bold`);
+	let toggleCUnit = document.querySelector("#c-unit");
+	toggleCUnit.setAttribute("class", ``);
 	let mainUnit = document.querySelector("#main-unit");
 	mainUnit.innerHTML = "°F";
 	let hiUnit = document.querySelector("#hi-unit");
@@ -192,12 +217,15 @@ function revertF(event) {
 	loUnit.innerHTML = "°F";
 	let feelsUnit = document.querySelector("#feels-unit");
 	feelsUnit.innerHTML = "°F";
+	let windSpeedUnit = document.querySelector("#wind-speed-unit");
+	windSpeedUnit.innerHTML = "mph";
 }
 
 let mainFarTemp = null;
 let hiFarTemp = null;
 let loFarTemp = null;
 let feelsFarTemp = null;
+let windSpeed = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", changeCity);

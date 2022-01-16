@@ -42,7 +42,8 @@
 								<input type="submit" value="search" class="btn btn-primary" />
 							</div>
 							<div class="col-2 units">
-								<a href="#" id="c-unit">°C</a> | <a href="#" id="f-unit">°F</a>
+								<a href="#" id="c-unit"><span class="">°C</span></a> |
+								<a href="#" id="f-unit"><span class="">°F</span></a>
 							</div>
 						</div>
 					</form>
@@ -71,7 +72,7 @@
 					</p>
 
 					<div class="row current-conditions">
-						<div class="col-7">
+						<div class="col-6">
 							<img
 								src=""
 								alt="weather icon for current conditions"
@@ -80,15 +81,15 @@
 							<p id="conditions">--</p>
 						</div>
 
-						<div class="col-2">
+						<div class="col-3 current-metrics">
 							<ul>
 								<li>
 									<span id="feels-like">--</span><span id="feels-unit">°F</span>
 								</li>
-								<li><span id="humidity">--</span></li>
+								<li><span id="humidity">--</span>%</li>
 								<li>
 									<span id="wind-speed">--</span>
-									mph
+									<span id="wind-speed-unit">mph</span>
 								</li>
 							</ul>
 						</div>

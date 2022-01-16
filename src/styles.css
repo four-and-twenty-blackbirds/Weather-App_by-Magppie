@@ -3,6 +3,11 @@ body {
 	font-family: "Outfit", sans-serif;
 }
 
+.current-metrics {
+	padding-left: 36px;
+	padding-right: 0px;
+}
+
 .weather-app-wrapper {
 	margin: 12px auto;
 	max-width: 480px;
@@ -48,7 +53,7 @@ body {
 
 .units {
 	padding: 0px;
-	font-weight: 300;
+	font-weight: 200;
 	font-size: 18px;
 }
 
@@ -59,6 +64,10 @@ body {
 
 .units a:hover {
 	text-decoration: underline;
+}
+
+.bold {
+	font-weight: 500;
 }
 
 h5 {
