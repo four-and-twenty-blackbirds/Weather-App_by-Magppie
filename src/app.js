@@ -221,6 +221,23 @@ function revertF(event) {
 	windSpeedUnit.innerHTML = "mph";
 }
 
+function getLocalCity(get) {
+	let localCityName = get.data.name;
+
+	search(localCityName);
+}
+
+function getLocalDetails(local) {
+	let lat = local.coords.latitude.toFixed(2);
+	let lon = local.coords.longitude.toFixed(2);
+	let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+	let apiKey = "aee115d67b5ede7133bf4a0747025512";
+	let unit = "imperial";
+	let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
+
+	axios.get(apiUrl).then(getLocalCity);
+}
+
 let mainFarTemp = null;
 let hiFarTemp = null;
 let loFarTemp = null;
@@ -236,4 +253,4 @@ unitC.addEventListener("click", convertC);
 let unitF = document.querySelector("#f-unit");
 unitF.addEventListener("click", revertF);
 
-search("Tucson");
+navigator.geolocation.getCurrentPosition(getLocalDetails);
